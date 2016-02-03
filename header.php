@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title><?php bloginfo( 'name' ); ?> <?php wp_title(); ?></title>
+		<title><?php bloginfo( 'name' ); echo " Civil Air Patrol, "; echo bloginfo( 'description' ); ?> <?php wp_title(); ?></title>
 		<?php wp_head(); ?>
 		<link media="screen" type="text/css" href="<?php print get_template_directory_uri(); ?>/css/screen.css" rel="stylesheet">
 		<link media="all" type="text/css" href="<?php print get_template_directory_uri(); ?>/css/all.css" rel="stylesheet">
@@ -27,9 +27,13 @@
 						<a href="/" name="top"><img src="<?php print get_template_directory_uri(); ?>/images/logo.png"  width="362" height="127" alt="Civil Air Patrol"></a>
 					</div>
 					<div class="headerDivider"></div>
-					<div class="nevadaWing">
+					<div class="bloginfo_name">
 						<?php bloginfo( 'name' ); ?>
-					</div>
+		                <div class="bloginfo_description">
+        			        <?php bloginfo( 'description' ); ?>
+            		    </div>
+                	</div>
+
 					<div class="servings">
 						<span class="servingsTitle">Citizens Serving <br/> Communities</span>
 						<?php
@@ -62,7 +66,7 @@
 					<div id="content">
 						<div class="slideshowTop"></div>
 						<div class="slideshow">
-							<img src="<?php print get_template_directory_uri(); ?>/images/sliedshow.jpg" alt="slideshow image" width="1024" height="342" />
+							<img src="<?php print get_template_directory_uri(); ?>/images/header.jpg" alt="slideshow image" width="1024" height="342" />
 						</div>
 						<div class="slideshowBottom"></div>
 						<div class="mainContent">
@@ -91,6 +95,10 @@
 											<li><a href="<?php print get_the_permalink( $post->ID ); ?>" class="selected"><?php print get_the_title( $post->ID ); ?></a></li>
 										<? endif; ?>
 
+										<?php if ( is_single() ) : ?>
+                                    		<li><?php the_category( ' / ', 'multiple' ); ?></li>
+										<? endif; ?>                                    
+                                    
 										<?php if ( is_search() ) : ?>
 											<li><a href="#" class="selected">Search Results</a></li>
 										<?php endif; ?>

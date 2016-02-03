@@ -79,14 +79,19 @@ body{
 	margin:25px 0px 0px 0px;
 }
 
-.nevadaWing{
+.bloginfo_name{
 	float:left;
 	text-transform: uppercase;
 	color:#f6bf22;
 	font-size: 42px;
 	font-family: 'RobotoRegular', Arial, Helvetica, sans-serif;
 	line-height: 43px;
-	margin:49px 0px 0px 25px;
+	margin:32px 0px 0px 25px;
+}
+
+.bloginfo_description{
+	font-size: 22px;
+	line-height: 23px;
 }
 
 
@@ -211,7 +216,7 @@ body{
 
 	background: rgb(9,59,120);
 	background: -moz-linear-gradient(top,  rgba(9,59,120,1) 1%, rgba(39,89,149,1) 88%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(9,59,120,1)), color-stop(88%,rgba(39,89,149,1))); /
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(9,59,120,1)), color-stop(88%,rgba(39,89,149,1)));
 	background: -webkit-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
 	background: -o-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
 	background: -ms-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
