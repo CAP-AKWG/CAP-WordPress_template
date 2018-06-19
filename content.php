@@ -4,10 +4,10 @@
 
 	<?php the_content(); ?>
 
-<? else : ?>
+<?php else : ?>
 
 	<h2><a href="<?php print get_the_permalink( $post->ID ); ?>"><?php print get_the_title( $post->ID  ); ?></a></h2>
 
 	<?php the_excerpt(); ?>
 
-<? endif; ?>
+<?php endif; ?>

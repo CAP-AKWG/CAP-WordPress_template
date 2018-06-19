@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title><?php bloginfo( 'name' ); ?> <?php wp_title(); ?></title>
+		<title><?php print get_the_title( $post->ID ); ?> || <?php bloginfo( 'description' ); ?> - <?php bloginfo( 'name' ); ?> Civil Air Patrol</title>
 		<?php wp_head(); ?>
 		<link media="screen" type="text/css" href="<?php print get_template_directory_uri(); ?>/css/screen.css" rel="stylesheet">
 		<link media="all" type="text/css" href="<?php print get_template_directory_uri(); ?>/css/all.css" rel="stylesheet">
@@ -27,8 +27,9 @@
 						<a href="/" name="top"><img src="<?php print get_template_directory_uri(); ?>/images/logo.png"  width="362" height="127" alt="Civil Air Patrol"></a>
 					</div>
 					<div class="headerDivider"></div>
-					<div class="nevadaWing">
-						<?php bloginfo( 'name' ); ?>
+					<div class="bloginfo">
+						<div style="font-size: 42px"><?php bloginfo( 'name' ); ?></div>
+						<div style="font-size: 28px"><?php bloginfo( 'description' ); ?></div>
 					</div>
 					<div class="servings">
 						<span class="servingsTitle">Citizens Serving <br/> Communities</span>
@@ -60,11 +61,25 @@
 				<div id="pageContent">
 					<div class="contentBorder"></div>
 					<div id="content">
+<?php
+/* AKWG - clean up all this code below once we decide to keep it */
+	if(get_post_meta($post->ID, 'header-slider-id', true)!="") {
+?>
 						<div class="slideshowTop"></div>
 						<div class="slideshow">
+<?php /* AKWG - remove static slide. Add MetaSlider plugin. Need to un-hardcode the slider number and add per-page function
 							<img src="<?php print get_template_directory_uri(); ?>/images/sliedshow.jpg" alt="slideshow image" width="1024" height="342" />
+*/ ?>
+
+<?php echo "<!-- get_post_meta(header-slider-id) = " . get_post_meta($post->ID, 'header-slider-id', true) . " -->"; ?>
+
+<?php echo do_shortcode('[metaslider id=' . get_post_meta($post->ID, 'header-slider-id', true) . ']'); ?>
+							<?php /* echo do_shortcode('[metaslider id="20"]'); */ ?>
 						</div>
 						<div class="slideshowBottom"></div>
+<?php
+}
+?>
 						<div class="mainContent">
 							<div class="leftColumn">
 								<?php
@@ -89,7 +104,7 @@
 												<li class="divider">/</li>
 											<?php endif; ?>
 											<li><a href="<?php print get_the_permalink( $post->ID ); ?>" class="selected"><?php print get_the_title( $post->ID ); ?></a></li>
-										<? endif; ?>
+										<?php endif; ?>
 
 										<?php if ( is_search() ) : ?>
 											<li><a href="#" class="selected">Search Results</a></li>

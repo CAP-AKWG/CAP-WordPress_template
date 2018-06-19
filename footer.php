@@ -14,9 +14,6 @@
 			<div class="page">
 				<?php dynamic_sidebar( 'footer-content' ); ?>
 				<div class="footerBox5">
-					<div class="copyright">
-						<p>&copy; <?php print date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
-					</div>
 					<div class="footerLinks">
 						<?php
 							wp_nav_menu( array(
@@ -25,12 +22,17 @@
 							) );
 						?>
 					</div>
+                                        <div class="copyright">
+                                                <p>&copy; <?php print date( 'Y' ); ?> <?php bloginfo( 'name' ); ?> Civil Air Patrol. All rights reserved.<br>
+                                                LINKS OR REFERENCES TO INDIVIDUALS OR COMPANIES DOES NOT CONSTITUTE AN ENDORSEMENT OF ANY INFORMATION, PRODUCT OR SERVICE YOU MAY RECEIVE FROM SUCH SOURCES.
+                                        </div>
 				</div>
 			</div>
 		</div>
 
 		<div id="printFooter">
-			&copy; <?php print date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.
+			&copy; <?php print date( 'Y' ); ?> <?php bloginfo( 'name' ); ?> Civil Air Patrol. All rights reserved.<br>
+			LINKS OR REFERENCES TO INDIVIDUALS OR COMPANIES DOES NOT CONSTITUTE AN ENDORSEMENT OF ANY INFORMATION, PRODUCT OR SERVICE YOU MAY RECEIVE FROM SUCH SOURCES.
 		</div>
 
 		<?php wp_footer(); ?>
