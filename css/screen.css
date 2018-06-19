@@ -79,16 +79,14 @@ body{
 	margin:25px 0px 0px 0px;
 }
 
-.nevadaWing{
-	float:left;
-	text-transform: uppercase;
-	color:#f6bf22;
-	font-size: 42px;
-	font-family: 'RobotoRegular', Arial, Helvetica, sans-serif;
-	line-height: 43px;
-	margin:49px 0px 0px 25px;
+.bloginfo{
+        float:left;
+        text-transform: uppercase;
+        color:#f6bf22;
+        font-family: 'RobotoRegular', Arial, Helvetica, sans-serif;
+        line-height: 43px;
+        margin:25px 0px 0px 25px;
 }
-
 
 .servings{
 	float:right;
@@ -180,7 +178,7 @@ body{
 	font-family: 'RobotoMedium', Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 18px;
-	color:#fff;
+	color: #ffffff;
 
 	background: #0e3e66;
 	padding:15px 34px 0px 34px;
@@ -197,27 +195,34 @@ body{
 	border-top-right-radius: 9px;
 
 	border-bottom:1px solid #4370a4;
+/* AKWG: make buttons 'highlighted' style all the time, just highlight mouseover color
+   Eventually, make 'selected' button gold color with blue text for better contrast*/
+        height: 31px;
+        padding:14px 33px 0px 33px;
+
+        border-left:1px solid #194a84;
+        border-right:1px solid #193e6b;
+        border-top:1px solid #255187;
+
+        background: rgb(9,59,120);
+        background: -moz-linear-gradient(top,  rgba(9,59,120,1) 1%, rgba(39,89,149,1) 88%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(9,59,120,1)), color-stop(88%,rgba(39,89,149,1)));
+        background: -webkit-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
+        background: -o-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
+        background: -ms-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
+        background: linear-gradient(to bottom,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#093b78', endColorstr='#275995',GradientType=0 );
 }
 
+#mainNavigation ul li a:link,
+#mainNavigation ul li a:visited{
+        color: #ffffff;
+}
 #mainNavigation ul li a:hover,
 #mainNavigation ul li a.selected{
-	height: 31px;
-	padding:14px 33px 0px 33px;
 	color:#f6bf22;
-
-	border-left:1px solid #194a84;
-	border-right:1px solid #193e6b;
-	border-top:1px solid #255187;
-
-	background: rgb(9,59,120);
-	background: -moz-linear-gradient(top,  rgba(9,59,120,1) 1%, rgba(39,89,149,1) 88%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(9,59,120,1)), color-stop(88%,rgba(39,89,149,1))); /
-	background: -webkit-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
-	background: -o-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
-	background: -ms-linear-gradient(top,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
-	background: linear-gradient(to bottom,  rgba(9,59,120,1) 1%,rgba(39,89,149,1) 88%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#093b78', endColorstr='#275995',GradientType=0 );
 }
+/* /AKWG */
 
 .search{
 	float:right;
