@@ -28,6 +28,7 @@
 					</div>
 					<div class="headerDivider"></div>
 					<div class="bloginfo">
+						<?php /* AKWG adjust these pixel sizes for wing/squadron names without wrapping */ ?>
 						<div style="font-size: 42px"><?php bloginfo( 'name' ); ?></div>
 						<div style="font-size: 28px"><?php bloginfo( 'description' ); ?></div>
 					</div>
@@ -61,20 +62,11 @@
 				<div id="pageContent">
 					<div class="contentBorder"></div>
 					<div id="content">
-<?php
-/* AKWG - clean up all this code below once we decide to keep it */
-	if(get_post_meta($post->ID, 'header-slider-id', true)!="") {
-?>
+<?php /* AKWG if post custom meta 'header-slider-id' is set, then output metaslider code */
+						if(get_post_meta($post->ID, 'header-slider-id', true)!="") { ?>
 						<div class="slideshowTop"></div>
 						<div class="slideshow">
-<?php /* AKWG - remove static slide. Add MetaSlider plugin. Need to un-hardcode the slider number and add per-page function
-							<img src="<?php print get_template_directory_uri(); ?>/images/sliedshow.jpg" alt="slideshow image" width="1024" height="342" />
-*/ ?>
-
-<?php echo "<!-- get_post_meta(header-slider-id) = " . get_post_meta($post->ID, 'header-slider-id', true) . " -->"; ?>
-
-<?php echo do_shortcode('[metaslider id=' . get_post_meta($post->ID, 'header-slider-id', true) . ']'); ?>
-							<?php /* echo do_shortcode('[metaslider id="20"]'); */ ?>
+							<?php echo do_shortcode('[metaslider id=' . get_post_meta($post->ID, 'header-slider-id', true) . ']'); ?>
 						</div>
 						<div class="slideshowBottom"></div>
 <?php
